@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajio login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+ 
+
+section{
+    width: 35%;
+    margin: auto;
+}
+
+.box{
+    padding: 5px 25px;
+    background-color: #fff;
+    margin-top: 100px;
+}
+
+.box h1{
+    text-align: center;
+    font-size: 30px;
+    margin: 15px 0;
+    background-color: #fff;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b1acac;
+    font-size: 15px;
+    background-color: white;
+}
+
+label{
+    margin: 20px 0 5px 0;
+    font-size: 20px;
+    background-color: #fff;
+}
+form p{
+    text-align: center;
+    font-size: small;
+    margin: 20px 0;
+    background-color: #fff;
+}
+.box>p{
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+a, span{
+    text-decoration: none;
+    color: blue;
+    background-color: #fff;
+}
+
+input[type="submit"]:hover{
+    background-color: orange;
+    color: black;
+}
+
+
+
+#icon {
+    width: 25px;
+    z-index: 2;
+    padding: 7px 0 0 0px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.fixed-nav-bar {
+    
+    width: 100%;
+    height: 84px;
+   background-color:white;
+  }
+
+.ajio
+{
+display: flex;
+justify-content: space-evenly;  
+}
+
+
+p{
+   
+    border: none;
+    color:black;
+    padding: 10px 10px;
+    margin-top: 30px;
+}
+#box{
+   flex-grow: .6;
+ margin-top: 15px;
+ text-align: center;
+}
+#box img{
+    height: 38px;
+    width: 130px;; 
+}
+.ajio>div{
+    align-items: center;
+}
+#topBtn1{
+    color: #2c4152;
+    font: 14px ScourceSansPro;
+    border: 0;
+    background-color: white;
+    cursor:pointer;
+}
+#topBtn2{
+    color: #2c4152;
+    margin-left: 13px;
+   font: 14px ScourceSansPro;
+    border: 0;
+    background-color: white;
+}
+#search{
+    margin-top: 12px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 230px;
+    background-color: #fffded;
+}
+#searchimg{
+ margin-left:-30px;
+ cursor:pointer;
+ 
+}
+.ajioluxe{
+   margin-right:-210px;
+   padding:4px 9px 4px 9px;
+   border:0;
+   background-color:black;
+   color:white;
+   cursor:pointer;
+}
+#wishlist{
+    margin-top: 30px;
+    border: 0;
+    background-color: white;
+}
+#wishlist img{
+    height: 38px;
+}
+#bag{
+    margin-top: 27px;
+    border: 0;
+    background-color: white;
+}
+#bag img{
+    height: 47px;
+}
+
+#signup{
+    background-color: wheat;
+}
+#signup:hover{
+    background-color: orange;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="fixed-nav-bar">
+        <div class="ajio">
+              <div id="box"><a href=""><img src="	https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="Ajio-Logo"> </div></a>
+              <div id="men"><a href=""><P>MEN</P></a></div>
+              <div id="women"><a href=""><P>WOMEN</P></a></div>
+              <div id="kids"><a href=""><P>KIDS</P></a></div>
+              <div id="indie"><P>INDIE</P> </div>
+              <div id="home&kitchen"><a href=""><P>HOME AND KITCHEN</P></a> </div>
+              <div>
+                  <div>
+                    <div><a href="Login.html"><button id="topBtn1">Sign In/Join AJIO</button></a>
+                    <button id="topBtn2">Customer Care</button></div>
+                 </div>
+                  <input type="text"  id="search" placeholder="Search AJIO">
+                  <i id="searchimg" type="submit" class="fa fa-search"></i>
+                </div>
+                <div><a href =" "><button class="ajioluxe">Visit AJIOLUXE</button></a></div>
+                <div id="wishlist"><a href=" "><img src="https://assets.ajio.com/static/img/wishlistIcon.svg" alt="Wishlist"></a></div>
+                <div id="bag"><a href=" "> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjHuCTCHiz7-sR9YwmlVHDZ0UXU-tcjDRIzmGlub9of64k0gsAJXe29kR-9Bpfj1f_YAg&usqp=CAU"></a></div>
+             </div>
+         </div>
+         
+        </nav>
+    <section>
+        <div class="box">
+            <h1>Sign In</h1>
+            <form action="">
+                <label for="">Email</label>
+                <input type="email" placeholder="Enter email" id="logEmail" value="">
+
+                <label for="">Password</label>
+                <div class="viz"> <img src="eye-solid.svg" onclick="seePass()" id="icon" alt=""></div>
+                <input type="password" placeholder="Enter password" id="logPass" value="">
+
+                
+
+                <input id="signup" type="submit" value="Log in" />
+            </form>
+            <p>Don't have an account? <a href="Signup.html">Sign up</a> </p>
+        </div>
+
+    </section>
+</body>
+</html>
