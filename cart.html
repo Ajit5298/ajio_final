@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJio Cart</title>
+</head>
+<body>
+    <h1>Cart</h1>
+
+    <div id="cartProducts">
+
+    </div>
+
+    <button onclick="buyProducts()">click here</button>
+
+
+    <script>
+
+        window.onload = function () {
+            // alert('working');
+            
+            var DataFromLS = JSON.parse(localStorage.getItem("current-user-ajio"));
+            if(!DataFromLS){
+                window.location.href = "/login.html";
+                alert("cant access the cart please login first");
+            }
+            else{
+                var DataFromLS = JSON.parse(localStorage.getItem("AjioData"));
+                console.log(DataFromLS, "DataFromLS");
+
+                var currentUser = JSON.parse(localStorage.getItem("current-user-ajio"));
+                console.log(currentUser, "currentUser");
+
+                var divFromHtml = document.getElementById("cartProducts");
+                console.log(divFromHtml, "divFromHtml");
+
+                var cartProducts;
+
+                var flag = false
+
+                for(var i =0; i < DataFromLS.length; i++){
+                    if(DataFromLS[i].Email === currentUser["Current-user-email"] && DataFromLS[i].cartProducts){
+                        cartProducts = DataFromLS[i].cartProducts;
+                        console.log(cartProducts, "cartProducts")
+                        flag = true;
+                    }
+                }
+                if(flag === false){
+                    alert("No products added into cart");
+                }
+                else{
+                    console.log(cartProducts, "cartProducts");
+                    var productWithHtml = [];
+
+                    for(var i = 0; i < cartProducts.length; i++){
+                        productWithHtml += `<div><img src = "${cartProducts[i].image}"></img>
+                            <h4>${cartProducts[i].name}<h4><p>${cartProducts[i].price}</p></div>`
+                    }
+                    divFromHtml.innerHTML = productWithHtml;
+                }
+            }
+        }
+
+        function buyProducts(){
+            // alert("working");
+
+            var DataFromLS = JSON.parse(localStorage.getItem("AjioData"));
+            var currentUser = JSON.parse(localStorage.getItem("current-user-ajio"));
+            
+            var updatedUser = [];
+
+            for(var i =0; i < DataFromLS.length; i++){
+                    if(DataFromLS[i].Email === currentUser["Current-user-email"] && DataFromLS[i].cartProducts){
+                        DataFromLS[i].cartProducts = [];
+                        updatedUser.push(DataFromLS[i]);
+                    }
+                    else{
+                        updatedUser.push(DataFromLS[i]);
+                    }
+                }
+
+                localStorage.setItem("AjioData", JSON.stringify(updatedUser));
+                window.location.href = "/mens(showproduct).html";
+                alert("product delivered soon");
+        }
+
+    </script>
+
+</body>
+</html>

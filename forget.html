@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"
     <script src="https://kit.fontawesome.com/6d819e768f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="login.css">
-    <title>Myntra</title>
+    <link rel="stylesheet" href="forget.css">
+    <title>Ajio.com</title>
 </head>
 
 <body>
@@ -38,18 +37,13 @@
                     </div>
 
                 </div>
-                <div>
+                <div id="change">
                     <label>Enter Your Email</label>
                     <br>
                     <input id="UserEmail" type="email" placeholder="Enter Your Email">
                     <br>
-                    <label>Enter Your Password</label>
-                    <br>
-                    <input id="UserPassword" type="Password" placeholder="Enter Your Password">
-                    <br>
-                   <a href="forget.html"><p style="font-size: 15px;">Forget Password</p></a> 
-                    <input type="Submit" value="login">
-                   <a href="/register.html"><input style="text-align: center; cursor: pointer;" type="text" value="Create Your Account"></a> 
+                    <!-- <input type="Submit" value="submit email"> -->
+                    <button onclick="forgetPassword(event)">Submit Email</button></a>
                 </div>
 
             </form>
@@ -57,16 +51,6 @@
     </div>
 
     <script src="server.js"></script>
-
-    <script>
-        window.onload = function(){
-            var DataFromLS = JSON.parse(localStorage.getItem("current-user-ajio"));
-            if(DataFromLS){
-                window.location.href = "/index.html";
-                alert("already logged");
-            }
-        }
-    </script>
 </body>
 
 </html>

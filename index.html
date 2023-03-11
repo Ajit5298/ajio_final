@@ -72,10 +72,11 @@
 
     </nav>
     
-    <div id="screen">
+    <div id="logout">
         
     </div>
-    <script src="show.js"></script>
+   
+    
 
 
 
@@ -173,7 +174,22 @@
 
 
 </body>
+<script>
+    function check() {
+       var DataFromLS = JSON.parse(localStorage.getItem("current-user-ajio"));
+       if (DataFromLS) {
+           var divForlogout = document.getElementById("logout");
+           var logoutButton = `<button onclick = "logout()">logout</button>`
+           divForlogout.innerHTML = logoutButton;
+       }
+   }
+   check()
+
+   function logout(){
+       localStorage.removeItem("current-user-ajio");
+       window.location.reload();
+       alert("logout Successfully");
+   }
+</script>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="jscode.js"></script>

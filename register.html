@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"
-    <script src="https://kit.fontawesome.com/6d819e768f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" <script src="https://kit.fontawesome.com/6d819e768f.js" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="register.css">
     <title>Myntra</title>
 </head>
 
 <body>
     <div id="full-page">
         <div id="login">
-            <form onsubmit="login(event)">
+            <form onsubmit="Register(event)">
                 <div id="logo">
                     <h1>Welcome To AJIO</h1>
                     <p>Join/Sign In</p>
@@ -37,8 +37,17 @@
                         </div>
                     </div>
 
+
                 </div>
                 <div>
+                    <label>Enter Your Name</label>
+                    <br>
+                    <input id="UserName" type="text" placeholder="Enter Your Name">
+                    <br>
+                    <label>Enter Your Mobile Number</label>
+                    <br>
+                    <input id="UserNumber" type="number" placeholder="Enter Your Number">
+                    <br>
                     <label>Enter Your Email</label>
                     <br>
                     <input id="UserEmail" type="email" placeholder="Enter Your Email">
@@ -47,9 +56,13 @@
                     <br>
                     <input id="UserPassword" type="Password" placeholder="Enter Your Password">
                     <br>
-                   <a href="forget.html"><p style="font-size: 15px;">Forget Password</p></a> 
-                    <input type="Submit" value="login">
-                   <a href="/register.html"><input style="text-align: center; cursor: pointer;" type="text" value="Create Your Account"></a> 
+                    <label>Confirm Your Password</label>
+                    <br>
+                    <input id="UserConfirmPassword" type="Password" placeholder="Confirm Your Password">
+                    <br>
+                    <input type="Submit" value="Create Your Account">
+                    <a href="/login.html"><input style="text-align: center; cursor: pointer;" type="text"
+                            value="Login"></a>
                 </div>
 
             </form>
@@ -57,16 +70,16 @@
     </div>
 
     <script src="server.js"></script>
-
     <script>
-        window.onload = function(){
+        window.onload = function () {
             var DataFromLS = JSON.parse(localStorage.getItem("current-user-ajio"));
-            if(DataFromLS){
+            if (DataFromLS) {
                 window.location.href = "/index.html";
                 alert("already logged");
             }
         }
     </script>
+
 </body>
 
 </html>
